@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo -e "\n >>> CHECKING solhint \033[0;31m(read-only) \033[0m"
+npm run solhint:check
+LINT_PASS=$?
+
+if [ $LINT_PASS -ne 0 ];
+then
+  echo -e "\033[0,33m >>> Lint check failed! \033[0m"
+  exit 2
+fi;
+
+echo -e "\n >>> CHECKING prettier \033[0;208m(write) \033[0m"
+npm run prettier:contracts-fix
+npm run prettier:scripts-fix
+
+echo -e "\n \033[0;32m LINT CHECK PASSED \033[0m"

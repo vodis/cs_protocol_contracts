@@ -1,0 +1,28 @@
+{
+  "name": "cs_protocol_contracts",
+  "version": "1.0.0",
+  "description": "Diamond contracts for CraftScript protocol",
+  "files": [
+    "/contracts/**/*.sol"
+  ],
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "deploy:hardhat": "npx hardhat run --network hardhat",
+    "solhint:check": "solhint \"contracts/**/*.sol\"",
+    "prettier:contracts-fix": "prettier --config .prettierrc --write --plugin=prettier-plugin-solidity '{contracts,src}/**/*.sol'",
+    "prettier:scripts-fix": "prettier --config .prettierrc --write '{scripts,migrations,test,src}/**/*.js'",
+    "test": "npx hardhat test --network hardhat",
+    "prepare": "husky install"
+  },
+  "author": "vodis",
+  "license": "ISC",
+  "devDependencies": {
+    "hardhat": "^2.19.4",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.1",
+    "prettier-plugin-solidity": "^1.3.1",
+    "solhint": "^4.1.1",
+    "solhint-plugin-prettier": "^0.1.0"
+  },
+  "type": "module"
+}

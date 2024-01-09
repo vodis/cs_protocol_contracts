@@ -1,0 +1,26 @@
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "endOfLine":"auto",
+  "printWidth": 120,
+  "useTabs": false,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "printWidth": 99,
+        "tabWidth": 4,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "semi": true
+      }
+    }
+  ]
+}
