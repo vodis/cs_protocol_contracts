@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "compile": "npx hardhat compile",
-    "deploy:hardhat": "npx hardhat run --network hardhat",
+    "local-network:run": "npx hardhat node",
+    "local-network:deploy": "npx hardhat run --network localhost scripts/deploy.js",
     "solhint:check": "solhint \"contracts/**/*.sol\"",
     "prettier:contracts-fix": "prettier --config .prettierrc --write --plugin=prettier-plugin-solidity '{contracts,src}/**/*.sol'",
     "prettier:scripts-fix": "prettier --config .prettierrc --write '{scripts,migrations,test,src}/**/*.js'",
@@ -17,7 +18,9 @@
   "author": "vodis",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "hardhat": "^2.19.4",
+    "hardhat-gas-reporter": "^1.0.9",
     "husky": "^8.0.3",
     "prettier": "^3.1.1",
     "prettier-plugin-solidity": "^1.3.1",
