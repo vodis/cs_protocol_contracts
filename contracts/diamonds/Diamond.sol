@@ -5,7 +5,7 @@ pragma solidity 0.8.19;
 import { LibDiamond } from "../libraries/LibDiamond.sol";
 import { DiamondCut } from "./DiamondCut.sol";
 import { DiamondLoupe } from "./DiamondLoupe.sol";
-import { OwnershipFacet } from "../facets/OwnershipFacet.sol";
+import { OwnershipFacet } from "../facets/ownership/OwnershipFacet.sol";
 
 contract Diamond {
     constructor(address _contractOwner) {

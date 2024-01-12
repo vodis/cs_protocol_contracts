@@ -31,6 +31,7 @@ yarn-debug.log*
 yarn-error.log*
 *.dbg.json
 deployArgs.json
+config*
 
 # Dev
 /relayerTest
