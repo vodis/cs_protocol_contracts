@@ -2,13 +2,13 @@
 
 pragma solidity 0.8.19;
 
-import { LibDiamond } from "../libraries/LibDiamond.sol";
-import { IERC173 } from "../interfaces/IERC173.sol";
+import { LibDiamond } from "../../libraries/LibDiamond.sol";
+import { IERC173 } from "../../interfaces/IERC173.sol";
 
 contract OwnershipFacet is IERC173 {
     function transferOwnership(address _newOwner) external override {
         LibDiamond.enforceIsContractOwner();
-        require(_newOwner != address(0x0), "GTM: null address error");
+        require(_newOwner != address(0x0), "OF: null address error");
         LibDiamond.setContractOwner(_newOwner);
     }
 

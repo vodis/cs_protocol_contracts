@@ -1,12 +1,14 @@
 const fs = require("fs");
+
 import { task } from "hardhat/config";
+import { AbiCoder } from "@ethersproject/abi";
 
 const basePath = "/contracts/facets/";
 const sharedLibraryBasePath = "/contracts/libraries/";
 
 task("diamondABI", "Generates ABI file for diamond, includes all ABIs of facets").setAction(async () => {
   let files = fs.readdirSync("." + basePath);
-  let abi = [];
+  let abi: AbiCoder[] = [];
   for (const file of files) {
     const facetsFromFile = fs.readdirSync(`./artifacts${basePath}${file}`);
 
@@ -37,6 +39,6 @@ task("diamondABI", "Generates ABI file for diamond, includes all ABIs of facets"
     abi.push(...json.abi);
   }
   let finalAbi = JSON.stringify(abi);
-  fs.writeFileSync("./diamondABI/diamond.json", finalAbi);
-  console.log("ABI written to diamondABI/diamond.json");
+  fs.writeFileSync("./abi/diamond/diamond.json", finalAbi);
+  console.log("ABI written to diamond.json");
 });
